@@ -5,7 +5,7 @@ import json
 
 # Get Sample Ids based on project ID
 projID = '18785778'
-accessToken = '5e58561f75514fc69e2c92b1fecc43d0'
+accessToken = '<add your basespace Access Token Here>'
 
 fileList = []
 
