@@ -2,6 +2,7 @@
 
 import urllib2
 import json
+import os
 
 # Get Sample Ids based on project ID
 projID = '18785778'
@@ -71,18 +72,20 @@ for fil in fileList:
     fileID =  fil['Id']
     url = 'https://api.basespace.illumina.com/v1pre3/files/'+fileID+'/content?access_token='+accessToken
 
-    dataFile = urllib2.urlopen(url)
-    chunk = 4096
+    os.system('wget -O '+fileName+' '+url)
 
-    print "Downloading File: "+fileName+" --- Please be patient"
+    # dataFile = urllib2.urlopen(url)
+    # chunk = 4096
 
-    f = open(fileName, "w")
-    while 1:
-        data = dataFile.read(chunk)
-        if not data:
-            print "done."
-            break
-        f.write(data)
+    # print "Downloading FileID: "+fileName+" --- Please be patient"
+
+    # f = open(fileName, "w")
+    # while 1:
+    #     data = dataFile.read(chunk)
+    #     if not data:
+    #         print "done."
+    #         break
+    #     f.write(data)
     
     print "File: "+fileName+" Succesfully Downloaded"
     fileCount += 1
